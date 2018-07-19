@@ -35,6 +35,12 @@ public class ArticleDetailActivity extends AppCompatActivity
 
     private ViewPager mPager;
     private MyPagerAdapter mPagerAdapter;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
     private View mUpButtonContainer;
     private View mUpButton;
 

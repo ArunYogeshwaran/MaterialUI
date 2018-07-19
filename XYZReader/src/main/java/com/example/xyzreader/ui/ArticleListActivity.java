@@ -67,7 +67,7 @@ public class ArticleListActivity extends AppCompatActivity implements
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                checkNetwork();
+                checkInternetConnection();
                 refresh();
             }
         });
@@ -90,10 +90,10 @@ public class ArticleListActivity extends AppCompatActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
-        checkNetwork();
+        checkInternetConnection();
     }
 
-    private void checkNetwork() {
+    private void checkInternetConnection() {
         if (!isNetworkAvailable()) {
             snackbar.show();
             return;
@@ -114,10 +114,7 @@ public class ArticleListActivity extends AppCompatActivity implements
     @Override
     protected void onResume() {
         super.onResume();
-
-
-        checkNetwork();
-
+        checkInternetConnection();
         snackbar.dismiss();
     }
 
@@ -152,9 +149,9 @@ public class ArticleListActivity extends AppCompatActivity implements
         adapter.setHasStableIds(true);
         mRecyclerView.setAdapter(adapter);
         int columnCount = getResources().getInteger(R.integer.list_column_count);
-        StaggeredGridLayoutManager sglm =
+        StaggeredGridLayoutManager staggeredGridLayoutManager =
                 new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(sglm);
+        mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
     }
 
     @Override

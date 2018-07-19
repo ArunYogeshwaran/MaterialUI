@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/paper_overlap"
+                android:layout_marginTop="@dimen/paper_sheet_top_margin"
                 android:background="#fff"
                 android:elevation="2dp"
                 android:maxWidth="@dimen/detail_card_max_width"
@@ -91,7 +91,7 @@
                     android:layout_marginRight="@dimen/detail_inner_horiz_margin"
                     android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                     android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    tools:text="@string/loremipsum" />
+                    tools:text="@string/sample_text" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
         </LinearLayout>
